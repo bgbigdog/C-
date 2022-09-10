@@ -6,6 +6,7 @@ int main()
     string str1, str2;
     char a[100], b[100];
     int i = 0;
+
     char ch1, ch2;
 
     while (cin >> ch1)
