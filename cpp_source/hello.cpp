@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main()
+
 {
     string str1, str2;
     char a[100], b[100];
