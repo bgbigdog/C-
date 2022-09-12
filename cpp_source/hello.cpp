@@ -1,55 +1,91 @@
-#include<iostream>
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-int main()
 
+class point
 {
-    string str1, str2;
-    char a[100], b[100];
-    int i = 0;
-
-        char ch1, ch2;
-
-    while (cin >> ch1)
+public:
+    void setX(int x)
     {
-        a[i] = ch1;
+        m_x = x;
+    };
 
-        if (cin.get() == '\n')
-        {
-            a[i] = '\0';
-            break;
-        }
-        i++;
-    }
-
-    i = 0;
-
-    while (cin >> ch2)
+    int getX()
     {
-        b[i] = ch2;
-        if (cin.get() == '\n')
-        {
-            b[i] = '\0';
-            break;
-        }
-        i++;
-    }
+        return m_x;
+    };
 
-    str1 = a;
-    str2 = b;
-
-    for (int i = 0; i < str1.length(); i++)
+    void setY(int y)
     {
-        for (int j = 0; j < str2.length(); j++)
-        {
-            if (str1[i] == str2[j])
-            {
-                str1.erase(i, 1);
-            }
-        }
-    }
+        m_y = y;
+    };
 
-    cout << str1 << endl;
+    int getY()
+    {
+        return m_y;
+    };
+
+private:
+    int m_x;
+    int m_y;
+};
+
+class circle
+{
+public:
+    void setR(int r)
+    {
+        m_R = r;
+    };
+
+    int getR()
+    {
+        return m_R;
+    };
+
+    void setCenter(int x, int y)
+    {
+        m_Center.setX(x);
+        m_Center.setY(y);
+    };
+
+    point getCenter()
+    {
+        return m_Center;
+    };
+
+    void comparison(point &point)
+    {
+        int distabance = (point.getX() - m_Center.getX()) * (point.getX() - m_Center.getX()) + (point.getY() - m_Center.getY()) * (point.getY() - m_Center.getY());
+        if (distabance == m_R * m_R)
+        {
+            printf("点在圆上\n");
+        };
+
+        if (distabance < m_R * m_R)
+        {
+            printf("点在圆内\n");
+        };
+
+        if (distabance > m_R * m_R)
+        {
+            printf("点在圆外\n");
+        };
+    };
+
+private:
+    int m_R;
+    point m_Center;
+};
+
+int main()
+{
+    point core;
+    core.setX(10);
+    core.setY(0);
+    circle circle;
+    circle.setCenter(0, 0);
+    circle.setR(10);
+    circle.comparison(core);
     system("pause");
     return 0;
 }
