@@ -7,7 +7,8 @@
         "-finput-charset=UTF-8", // 处理mingw中文编码问题
         "${file}",
         "-o",
-        "${workspaceFolder}/exe/${fileBasenameNoExtension}.exe"
+        "${workspaceFolder}/exe/${fileBasenameNoExtension}.exe",
+        //"C:/Users/dan/Desktop/work_area/Cplusplus/head_source"
     ], // 编译命令参数
     "problemMatcher": {
         "owner": "cpp",

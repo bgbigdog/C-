@@ -1,4 +1,5 @@
 #include <iostream>
+#include "funtion.h"
 using namespace std;
 
 class point
@@ -84,7 +85,7 @@ int main()
     core.setY(0);
     circle circle;
     circle.setCenter(0, 0);
-    circle.setR(10);
+    circle.setR(100000);
     circle.comparison(core);
     system("pause");
     return 0;
